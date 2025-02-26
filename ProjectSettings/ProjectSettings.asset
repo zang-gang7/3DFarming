@@ -706,11 +706,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: b4effe50-ced2-4514-a150-ec8df6320c29
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: 3DFarming
+  organizationId: iiofpi
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
