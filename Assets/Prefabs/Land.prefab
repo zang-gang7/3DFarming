@@ -115,6 +115,7 @@ MonoBehaviour:
   soilMat: {fileID: 2100000, guid: 915b647579b554198ada0f7dbcc050f3, type: 2}
   farmlandMat: {fileID: 2100000, guid: 3b0a4419df943487bb24d1d779760135, type: 2}
   wateredMat: {fileID: 2100000, guid: 08c66ac05e4a54526bc68888169411eb, type: 2}
+  select: {fileID: 0}
 --- !u!1 &3056867248646965482
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7359610866860909069
 Transform:
   m_ObjectHideFlags: 0
@@ -177,7 +178,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 60ceca5b72507d943b2d2c1b668ddcd1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
