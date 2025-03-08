@@ -26,7 +26,7 @@ public class CameraController : MonoBehaviour
     void FollowPlayer()
     {
         // Position the camera should be in
-        Vector3 targetPosition = new Vector3(playerPos.position.x, transform.position.y, playerPos.position.z);
+        Vector3 targetPosition = new Vector3(playerPos.position.x, transform.position.y, playerPos.position.z - offsetZ);
 
         // Set the position accordingly
         transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.deltaTime);
