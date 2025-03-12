@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour
     // Iterate through a slot in a section and display them in the UI
     void RenderInventoryPanel(ItemData[] slots, InventorySlot[] uiSlots)
     {
-        for(int i = 0; i < toolSlots.Length; i++)
+        for(int i = 0; i < uiSlots.Length; i++)
         {
             // Display them accordingly
             uiSlots[i].Display(slots[i]);
