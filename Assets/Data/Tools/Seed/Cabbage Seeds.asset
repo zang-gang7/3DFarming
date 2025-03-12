@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ad756b577404f7b8e91ed7edfceddf, type: 3}
   m_Name: Cabbage Seeds
   m_EditorClassIdentifier: 
-  description: 
-  thumbnail: {fileID: 0}
+  description: Seeds to grow cabbages
+  thumbnail: {fileID: 191678419, guid: a8f4c4415cc0341bab93f456f6ef769d, type: 3}
   gameModel: {fileID: 0}
-  daysToGrow: 0
-  cropToYield: {fileID: 0}
+  daysToGrow: 3
+  cropToYield: {fileID: 11400000, guid: 9e45b8ad410294d9692cd0ab1a5c68e5, type: 2}

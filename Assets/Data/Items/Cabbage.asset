@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1c5386faba04fe08198d92a40b10bc, type: 3}
   m_Name: Cabbage
   m_EditorClassIdentifier: 
-  description: 
-  thumbnail: {fileID: 0}
+  description: A leafy green vegetable
+  thumbnail: {fileID: 1049706572, guid: 0e256240f7fe54ac09c27b4b2d20cad7, type: 3}
   gameModel: {fileID: 0}
