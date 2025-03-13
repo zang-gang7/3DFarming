@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 81816793}
   - component: {fileID: 81816792}
   - component: {fileID: 81816794}
+  - component: {fileID: 81816795}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -316,6 +317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolEquipSlot: {fileID: 1952279681}
+  timeText: {fileID: 124335025}
+  dateText: {fileID: 2126330444}
   inventoryPanel: {fileID: 65360840}
   toolHandSlot: {fileID: 1158626414}
   toolSlots:
@@ -339,6 +342,26 @@ MonoBehaviour:
   - {fileID: 1780513226}
   itemNameText: {fileID: 1786238428}
   itemDescriptionText: {fileID: 1836489337}
+--- !u!114 &81816795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81816791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef289962d6b64fd7890d8cf94ea364d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timestamp:
+    year: 0
+    season: 0
+    day: 0
+    hour: 0
+    minute: 0
+  timeScale: 1
+  sunTransform: {fileID: 1876383059}
 --- !u!1001 &95220691
 PrefabInstance:
   m_ObjectHideFlags: 0
