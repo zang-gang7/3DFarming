@@ -10,6 +10,9 @@ public class PlayerInteraction : MonoBehaviour
     // The land the player is currently selecting
     Land selectedLand = null;
 
+    // The interactable object the player is currently selecting
+    InteractableObject selectedInteractable = null;
+
     void Start()
     {
         // Get access to our PlayerController component
@@ -39,6 +42,19 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
 
+        // Check if the player is going to interact with an Item
+        if(other.tag == "Item")
+        {
+            selectedInteractable = other.GetComponent<InteractableObject>();
+            return;
+        }
+
+        // Deselect the interactable if the player is not standing on anything at the moment
+        if(selectedInteractable != null)
+        {
+            selectedInteractable = null;
+        }
+
         //Unselect the land if the player is not standing on any land at the moment
         if(selectedLand != null)
         {
@@ -64,11 +80,37 @@ public class PlayerInteraction : MonoBehaviour
     // Triggered when the player presses the tool button
     public void Interact()
     {
+
+        // The player shouldn't be able to use his tool when he has his hands full with an item
+        if(InventoryManager.Instance.equippedItem != null)
+        {
+            return;
+        }
         // Check if the player is selecting any land
         if(selectedLand != null)
         {
             selectedLand.Interact();
             return;
+        }
+    }
+
+    // Triggered when the player presses the item interact button
+    public void ItemInteract()
+    {
+        // If the player is holding something, keep it in the his inventory
+        if(InventoryManager.Instance.equippedItem != null)
+        {
+            InventoryManager.Instance.HandToInventory(InventorySlot.InventoryType.Item);
+            return;
+        }
+
+        // If the player isn't holding anything, pick up an item
+
+        // Check if there is an interactable selected
+        if(selectedInteractable != null)
+        {
+            // Pick it up
+            selectedInteractable.Pickup();
         }
     }
 }

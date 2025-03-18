@@ -9,5 +9,8 @@ public class SeedData : ItemData
     public int daysToGrow;
 
     // The crop the seed will yield
-    public ItemData cropToYield; 
+    public ItemData cropToYield;
+
+    // The seedling Gameobject
+    public GameObject seedling;
 }
