@@ -125,7 +125,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
     public void ToggleInventoryPanel()
     {
         // If the panel is hidden, show it and vice versa
-        inventoryPanel.SetActive(inventoryPanel.activeSelf);
+        inventoryPanel.SetActive(!inventoryPanel.activeSelf);
 
         RenderInventory();
     }

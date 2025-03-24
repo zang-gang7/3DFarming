@@ -7,9 +7,9 @@ public class RegrowableHarvestBehaviour : InteractableObject
     CropBehaviour parentCrop;
 
     // Sets the parent crop
-    public void SetParent(CropBehaviour parentCrop)
+    public void SetParent(CropBehaviour parentCrop_)
     {
-
+        parentCrop = parentCrop_;
     }
     public override void Pickup()
     {
