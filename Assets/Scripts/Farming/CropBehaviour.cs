@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class CropBehaviour : MonoBehaviour
 {
+    // The ID of the crop they belongs to
+    int landID;
+
     // Information on what the crop will grow into
     SeedData seedToGrow;
 
@@ -33,8 +36,16 @@ public class CropBehaviour : MonoBehaviour
 
     // Initialisation for the crop Gameobject
     // Called when the player plants a seed
-    public void Plant(SeedData seedToGrow)
+    public void Plant(int landID, SeedData seedToGrow)
     {
+        LoadCrop(landID, seedToGrow, CropState.Seed, 0, 0);
+        LandManager.Instance.RegisterCrop(landID, seedToGrow, cropState, growth, health);
+    }
+
+    public void LoadCrop(int landID, SeedData seedToGrow, CropState cropState, int growth, int health)
+    {
+        this.landID = landID;
+
         // Save the seed information
         this.seedToGrow = seedToGrow;
 
@@ -52,6 +63,10 @@ public class CropBehaviour : MonoBehaviour
         // Convert it to minutes
         maxGrowth = GameTimestamp.HoursToMinutes(hoursToGrow);
 
+        // Set the growth and health accordingly
+        this.growth = growth;
+        this.health = health;
+
         // Check if it is regrowable
         if (seedToGrow.regrowable)
         {
@@ -63,7 +78,7 @@ public class CropBehaviour : MonoBehaviour
         }
 
         // Set the initial state to Seed
-        SwitchState(CropState.Seed);
+        SwitchState(cropState);
     }
 
     //  The crop will grow when watered
@@ -89,6 +104,9 @@ public class CropBehaviour : MonoBehaviour
         {
             SwitchState(CropState.Harvestable);
         }
+
+        // Inform LandManager on the changes
+        LandManager.Instance.OnCropStateChange(landID, cropState, growth, health);
     }
 
     // The crop will progressively wither when the soil is dry
@@ -100,6 +118,8 @@ public class CropBehaviour : MonoBehaviour
         {
             SwitchState(CropState.Wilted);
         }
+        // Inform LandManager on the changes
+        LandManager.Instance.OnCropStateChange(landID, cropState, growth, health);
     }
 
     // Function to handle the state changes
@@ -133,8 +153,7 @@ public class CropBehaviour : MonoBehaviour
             {
                 // Unparent it to thecrop
                 harvestable.transform.parent = null;
-
-                Destroy(gameObject);
+                RemoveCrop();
             }
 
             break;
@@ -146,6 +165,13 @@ public class CropBehaviour : MonoBehaviour
 
         // Set the current crop state to the state we're switching to
         cropState = stateToSwitch;
+    }
+
+    // Destorys and Deregisters the Crop
+    public void RemoveCrop()
+    {
+        LandManager.Instance.DeregisterCrop(landID);
+        Destroy(gameObject);
     }
 
     // Called when the player harvests a regrowable crop. Resets the state to seedling

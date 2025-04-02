@@ -6529,6 +6529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 253894408}
+  - component: {fileID: 253894409}
   m_Layer: 0
   m_Name: Farming Area
   m_TagString: Untagged
@@ -7127,6 +7128,18 @@ Transform:
   m_Father: {fileID: 2130187278}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &253894409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253894407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1441184f2e3f34c9faea4005d2d6453b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &254841020 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3056867248646965482, guid: 82a7f979a789b4cb8a8305db925dc0c7, type: 3}
@@ -44243,7 +44256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652762673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.42, y: -3.91, z: -33.6}
+  m_LocalPosition: {x: -4.42, y: 0, z: -33.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -51708,7 +51721,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966750806}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.54, y: 5.21, z: -8.776832}
+  m_LocalPosition: {x: 3.54, y: 1, z: -8.776832}
   m_LocalScale: {x: 17.966455, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55553,6 +55566,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2473846404924283496, guid: e17d69e0d8cac48faac4794d87bd8f79, type: 3}
+      propertyPath: itemIndex
+      value: 
+      objectReference: {fileID: 11400000, guid: def974cd1e16b4764be5e73ed3f466f0, type: 2}
     - target: {fileID: 3224814967642415133, guid: e17d69e0d8cac48faac4794d87bd8f79, type: 3}
       propertyPath: m_Name
       value: Essential
