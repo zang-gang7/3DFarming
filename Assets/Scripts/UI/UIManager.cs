@@ -39,6 +39,9 @@ public class UIManager : MonoBehaviour, ITimeTracker
     public GameObject fadeIn;
     public GameObject fadeOut;
 
+    [Header("Yes No Prompt")]
+    public YesNoPrompt yesNoPrompt;
+
     private void Awake()
     {
         // If there is more than one instance, destory the extra

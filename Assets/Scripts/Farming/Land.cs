@@ -186,18 +186,17 @@ public class Land : MonoBehaviour, ITimeTracker
 
     public void ClockUpadate(GameTimestamp timestamp)
     {
-        // Checked if 24 hours had passed since last watered
+        // Checked if 24 hours has passed since last watered
         if(landStatus == LandStatus.Watered)
         {
             // Hours since the land was watered
             int hoursElapsed = GameTimestamp.CompareTimestamps(timeWatered, timestamp);
 
-            //Grow the planted crop, if any
+            // Grow the planted crop, if any
             if(cropPlanted != null)
             {
                 cropPlanted.Grow();
             }
-
             if(hoursElapsed > 24)
             {
                 // Dry up (Switch back to farmland)
@@ -205,8 +204,8 @@ public class Land : MonoBehaviour, ITimeTracker
             }
         }
 
-        //Handle the wilting of the plant when the land is not watered
-        if(landStatus == LandStatus.Watered && cropPlanted != null)
+        // Handle the wilting of the plant when the land is not watered
+        if(landStatus != LandStatus.Watered && cropPlanted != null)
         {
             // If the crop has already germinated, start the withering
             if (cropPlanted.cropState != CropBehaviour.CropState.Seed)
@@ -214,5 +213,11 @@ public class Land : MonoBehaviour, ITimeTracker
                 cropPlanted.Wither();
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from the list on destroy
+        TimeManager.Instance.UnregisterTracker(this);
     }
 }
